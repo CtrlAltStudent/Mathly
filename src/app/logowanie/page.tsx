@@ -7,7 +7,7 @@ import { useState, Suspense } from "react";
 function LogowanieForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") ?? "/";
+  const callbackUrl = searchParams.get("callbackUrl") ?? "/dashboard";
   const error = searchParams.get("error");
 
   const [email, setEmail] = useState("");
