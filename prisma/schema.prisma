@@ -16,6 +16,8 @@ model User {
   passwordHash String   @map("password_hash")
   name         String?
   role         String   @default("student") // student | tutor | admin
+  gradeLevel   String?  @map("grade_level")  // "6sp" | "7sp" | "8sp" | "1lo" | "2lo" | "matura"
+  gradeLabel   String?  @map("grade_label")  // np. "Klasa 8 SP"
   createdAt    DateTime @default(now()) @map("created_at")
   updatedAt    DateTime @updatedAt @map("updated_at")
 }
