@@ -49,7 +49,7 @@ export default async function DashboardPage() {
             className={`block rounded-xl border bg-white p-6 shadow-sm transition hover:shadow-md ${
               card.comingSoon
                 ? "cursor-not-allowed opacity-75"
-                : "border-slate-200 hover:border-indigo-200"
+                : "border-slate-200 hover:border-mathly-200"
             }`}
           >
             <h2 className="font-semibold text-slate-800">{card.title}</h2>
@@ -63,9 +63,9 @@ export default async function DashboardPage() {
         ))}
       </div>
 
-      <div className="mt-10 rounded-xl border border-indigo-100 bg-indigo-50 p-6">
-        <h3 className="font-semibold text-indigo-900">Wskazówka</h3>
-        <p className="mt-1 text-sm text-indigo-700">
+      <div className="mt-10 rounded-xl border border-mathly-100 bg-mathly-50 p-6">
+        <h3 className="font-semibold text-mathly-900">Wskazówka</h3>
+        <p className="mt-1 text-sm text-mathly-700">
           Materiały i zadania będą dopasowane do Twojej klasy (6–8 SP lub
           matura). Wybierz swoją klasę w ustawieniach profilu, gdy funkcja będzie
           dostępna.

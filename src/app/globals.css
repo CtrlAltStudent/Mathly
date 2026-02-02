@@ -1,13 +1,34 @@
 @import "tailwindcss";
 
+/* Mathly – paleta z loga (odcienie niebieskiego) */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --mathly-50: #eff6ff;
+  --mathly-100: #dbeafe;
+  --mathly-200: #bfdbfe;
+  --mathly-300: #93c5fd;
+  --mathly-400: #60a5fa;
+  --mathly-500: #3b82f6;
+  --mathly-600: #2563eb;
+  --mathly-700: #1d4ed8;
+  --mathly-800: #1e40af;
+  --mathly-900: #1e3a8a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-mathly-50: var(--mathly-50);
+  --color-mathly-100: var(--mathly-100);
+  --color-mathly-200: var(--mathly-200);
+  --color-mathly-300: var(--mathly-300);
+  --color-mathly-400: var(--mathly-400);
+  --color-mathly-500: var(--mathly-500);
+  --color-mathly-600: var(--mathly-600);
+  --color-mathly-700: var(--mathly-700);
+  --color-mathly-800: var(--mathly-800);
+  --color-mathly-900: var(--mathly-900);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

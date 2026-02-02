@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import Link from "next/link";
+import { Logo } from "../components/Logo";
 
 export default async function DashboardLayout({
   children,
@@ -20,10 +21,8 @@ export default async function DashboardLayout({
   return (
     <div className="min-h-screen bg-slate-50">
       <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-          <Link href="/dashboard" className="text-xl font-bold text-slate-800">
-            Mathly
-          </Link>
+        <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4">
+          <Logo href="/dashboard" size="md" />
           <nav className="flex items-center gap-6">
             {navItems.map((item) => (
               <Link

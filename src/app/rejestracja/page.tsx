@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
+import { Logo } from "../components/Logo";
 
 export default function RejestracjaPage() {
   const router = useRouter();
@@ -42,8 +43,8 @@ export default function RejestracjaPage() {
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-slate-800">Mathly</h1>
-            <p className="text-slate-500 mt-1">Rejestracja</p>
+            <Logo href="/" size="lg" className="mx-auto" />
+            <p className="text-slate-500 mt-4">Rejestracja</p>
           </div>
           <form onSubmit={handleSubmit} className="space-y-5">
             {error && (
@@ -67,7 +68,7 @@ export default function RejestracjaPage() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-mathly-500 focus:border-mathly-500 outline-none transition"
                 placeholder="Jan"
               />
             </div>
@@ -85,7 +86,7 @@ export default function RejestracjaPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-mathly-500 focus:border-mathly-500 outline-none transition"
                 placeholder="np. uczen@example.com"
               />
             </div>
@@ -104,20 +105,20 @@ export default function RejestracjaPage() {
                 minLength={6}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-mathly-500 focus:border-mathly-500 outline-none transition"
               />
             </div>
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-medium rounded-lg transition-colors"
+              className="w-full py-3 px-4 bg-mathly-600 hover:bg-mathly-700 disabled:bg-mathly-400 text-white font-medium rounded-lg transition-colors"
             >
               {loading ? "Rejestracja..." : "Zarejestruj się"}
             </button>
           </form>
           <p className="mt-6 text-center text-sm text-slate-500">
             Masz już konto?{" "}
-            <Link href="/logowanie" className="text-indigo-600 hover:underline">
+            <Link href="/logowanie" className="text-mathly-600 hover:underline">
               Zaloguj się
             </Link>
           </p>

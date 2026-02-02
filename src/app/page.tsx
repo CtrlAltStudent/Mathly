@@ -21,14 +21,14 @@ export default async function Home() {
             {session ? (
               <Link
                 href="/dashboard"
-                className="rounded-lg bg-indigo-600 px-6 py-3 font-medium text-white hover:bg-indigo-700"
+                className="rounded-lg bg-mathly-600 px-6 py-3 font-medium text-white hover:bg-mathly-700 transition-colors"
               >
                 Przejdź do panelu
               </Link>
             ) : (
               <Link
                 href="/logowanie"
-                className="rounded-lg bg-indigo-600 px-6 py-3 font-medium text-white hover:bg-indigo-700"
+                className="rounded-lg bg-mathly-600 px-6 py-3 font-medium text-white hover:bg-mathly-700 transition-colors"
               >
                 Zaloguj się
               </Link>

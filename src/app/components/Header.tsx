@@ -1,21 +1,20 @@
 import Link from "next/link";
 import { auth, signOut } from "@/lib/auth";
+import { Logo } from "./Logo";
 
 export async function Header() {
   const session = await auth();
 
   return (
     <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href={session ? "/dashboard" : "/"} className="text-xl font-bold text-slate-800">
-          Mathly
-        </Link>
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4">
+        <Logo href={session ? "/dashboard" : "/"} size="md" />
         <nav className="flex items-center gap-4">
           {session ? (
             <>
               <Link
                 href="/dashboard"
-                className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+                className="rounded-lg bg-mathly-600 px-4 py-2 text-sm font-medium text-white hover:bg-mathly-700"
               >
                 Przejdź do panelu
               </Link>
@@ -30,7 +29,7 @@ export async function Header() {
               >
                 <button
                   type="submit"
-                  className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50"
+                  className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 transition-colors"
                 >
                   Wyloguj się
                 </button>
@@ -46,7 +45,7 @@ export async function Header() {
               </Link>
               <Link
                 href="/logowanie"
-                className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700"
+                className="rounded-lg bg-mathly-600 px-4 py-2 text-sm font-medium text-white hover:bg-mathly-700"
               >
                 Zaloguj się
               </Link>

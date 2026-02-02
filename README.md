@@ -60,18 +60,3 @@ Platforma korepetycji matematycznych dla uczniów klas 6–8 podstawówki oraz m
 | `npm run db:seed` | Seed (admin@mathly.pl / Admin123!) |
 | `npm run db:studio` | Prisma Studio (GUI bazy) |
 
-## Deployment (mathly.pl / Hostinger)
-
-1. Skonfiguruj PostgreSQL na Hostingerze (np. VPS lub Cloud Hosting).
-2. Ustaw zmienne środowiskowe w panelu Hostingera.
-3. Build: `npm run build`
-4. Start: `npm run start` (lub użyj pliku `standalone/server.js` z outputu builda).
-
-## Git (SSH)
-
-Repozytorium jest połączone przez SSH:
-
-```bash
-git remote -v
-# origin  git@github.com:CtrlAltStudent/Mathly.git
-```

@@ -3,6 +3,7 @@
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, Suspense } from "react";
+import { Logo } from "../components/Logo";
 
 function LogowanieForm() {
   const router = useRouter();
@@ -44,8 +45,8 @@ function LogowanieForm() {
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-slate-800">Mathly</h1>
-            <p className="text-slate-500 mt-1">Panel logowania</p>
+            <Logo href="/" size="lg" className="mx-auto" />
+            <p className="text-slate-500 mt-4">Panel logowania</p>
           </div>
           <form onSubmit={handleSubmit} className="space-y-5">
             {(error === "CredentialsSignin" || errorMsg) && (
@@ -71,7 +72,7 @@ function LogowanieForm() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-mathly-500 focus:border-mathly-500 outline-none transition"
                 placeholder="np. uczen@example.com"
               />
             </div>
@@ -90,20 +91,20 @@ function LogowanieForm() {
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition"
+                className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-mathly-500 focus:border-mathly-500 outline-none transition"
               />
             </div>
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400 text-white font-medium rounded-lg transition-colors"
+              className="w-full py-3 px-4 bg-mathly-600 hover:bg-mathly-700 disabled:bg-mathly-400 text-white font-medium rounded-lg transition-colors"
             >
               {loading ? "Logowanie..." : "Zaloguj się"}
             </button>
           </form>
           <p className="mt-6 text-center text-sm text-slate-500">
             Nie masz konta?{" "}
-            <a href="/rejestracja" className="text-indigo-600 hover:underline">
+            <a href="/rejestracja" className="text-mathly-600 hover:underline">
               Zarejestruj się
             </a>
           </p>

@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "Mathly – Korepetycje z matematyki",
   description:
     "Platforma korepetycji matematycznych dla uczniów klas 6-8 i maturzystów",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
