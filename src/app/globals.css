@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* Mathly – paleta z loga (odcienie niebieskiego) */
 :root {

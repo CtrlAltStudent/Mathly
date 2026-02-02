@@ -10,7 +10,7 @@ export default async function DashboardPage() {
       title: "Materiały",
       description: "Teoria i przykłady dopasowane do Twojej klasy",
       href: "/dashboard/materialy",
-      comingSoon: true,
+      comingSoon: false,
     },
     {
       title: "Zadania",
