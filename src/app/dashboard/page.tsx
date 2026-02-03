@@ -22,7 +22,7 @@ export default async function DashboardPage() {
       title: "Umów lekcję",
       description: "Zarezerwuj indywidualną lekcję online",
       href: "/dashboard/lekcje",
-      comingSoon: true,
+      comingSoon: false,
     },
     {
       title: "Tablica",
