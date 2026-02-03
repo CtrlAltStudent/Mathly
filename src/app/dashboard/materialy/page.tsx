@@ -3,6 +3,8 @@ import { auth } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 import { getMaterials, GRADE_LABELS } from "@/lib/content";
 
+type MaterialItem = { slug: string; title: string; topic: string };
+
 export default async function MaterialyPage() {
   const session = await auth();
   const user = session?.user?.id
@@ -13,7 +15,30 @@ export default async function MaterialyPage() {
     : null;
   const gradeLevel = user?.gradeLevel ?? undefined;
 
-  const materials = gradeLevel ? getMaterials(gradeLevel) : [];
+  const fileMaterials: MaterialItem[] = gradeLevel ? getMaterials(gradeLevel) : [];
+  const dbMaterials =
+    gradeLevel
+      ? await prisma.material.findMany({
+          where: { gradeLevel },
+          orderBy: [{ topic: "asc" }, { order: "asc" }],
+          select: { slug: true, title: true, topic: true },
+        })
+      : [];
+
+  const seenSlugs = new Set<string>();
+  const materials: MaterialItem[] = [];
+  for (const m of dbMaterials) {
+    if (!seenSlugs.has(m.slug)) {
+      seenSlugs.add(m.slug);
+      materials.push(m);
+    }
+  }
+  for (const m of fileMaterials) {
+    if (!seenSlugs.has(m.slug)) {
+      seenSlugs.add(m.slug);
+      materials.push(m);
+    }
+  }
 
   if (materials.length === 0) {
     return (

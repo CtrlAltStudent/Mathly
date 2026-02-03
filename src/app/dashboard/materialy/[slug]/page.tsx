@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getMaterial } from "@/lib/content";
+import { prisma } from "@/lib/db";
 import { MarkdownRenderer } from "@/app/components/MarkdownRenderer";
+import { HtmlContent } from "@/app/components/HtmlContent";
 
 export default async function MaterialPage({
   params,
@@ -9,8 +11,14 @@ export default async function MaterialPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const material = getMaterial(slug);
+
+  const dbMaterial = await prisma.material.findUnique({ where: { slug } });
+  const fileMaterial = getMaterial(slug);
+
+  const material = dbMaterial ?? fileMaterial;
   if (!material) notFound();
+
+  const isHtml = !!dbMaterial;
 
   return (
     <div>
@@ -22,7 +30,11 @@ export default async function MaterialPage({
       </Link>
       <div className="rounded-xl border border-slate-200 bg-white p-8 mt-4">
         <h1 className="text-2xl font-bold text-slate-800 mb-6">{material.title}</h1>
-        <MarkdownRenderer content={material.content} />
+        {isHtml ? (
+          <HtmlContent html={dbMaterial!.content} />
+        ) : (
+          <MarkdownRenderer content={(fileMaterial as { content: string }).content} />
+        )}
       </div>
     </div>
   );

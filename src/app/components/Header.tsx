@@ -7,7 +7,7 @@ export async function Header() {
 
   return (
     <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4">
+      <div className="flex h-20 w-full items-center justify-between px-4 md:px-8">
         <Logo href={session ? "/dashboard" : "/"} size="md" />
         <nav className="flex items-center gap-4">
           {session ? (

@@ -8,7 +8,7 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-slate-50">
       <Header />
-      <main className="mx-auto max-w-6xl px-4 py-16">
+      <main className="w-full px-4 py-16 md:px-8">
         <section className="text-center">
           <h1 className="text-4xl font-bold text-slate-800 sm:text-5xl">
             Korepetycje z matematyki
@@ -44,7 +44,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="mt-24 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <section className="mx-auto mt-24 grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-xl border border-slate-200 bg-white p-6">
             <h3 className="font-semibold text-slate-800">Materiały</h3>
             <p className="mt-2 text-sm text-slate-600">
@@ -71,7 +71,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="mt-24 rounded-xl border border-mathly-100 bg-mathly-50 p-8 text-center">
+        <section className="mx-auto mt-24 max-w-4xl rounded-xl border border-mathly-100 bg-mathly-50 p-8 text-center">
           <h2 className="text-xl font-bold text-mathly-900">Dla kogo?</h2>
           <p className="mt-2 text-mathly-700">
             Uczniowie klas 6–8 szkoły podstawowej oraz maturzyści przygotowujący
