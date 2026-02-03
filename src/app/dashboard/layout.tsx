@@ -16,6 +16,7 @@ export default async function DashboardLayout({
     { href: "/dashboard/materialy", label: "Materiały" },
     { href: "/dashboard/zadania", label: "Zadania" },
     { href: "/dashboard/lekcje", label: "Umów lekcję" },
+    { href: "/dashboard/tablica", label: "Tablica" },
     { href: "/dashboard/profil", label: "Profil" },
   ];
 

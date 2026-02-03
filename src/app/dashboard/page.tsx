@@ -26,9 +26,9 @@ export default async function DashboardPage() {
     },
     {
       title: "Tablica",
-      description: "Wspólna tablica do rozwiązywania zadań",
+      description: "Rysuj i rozwiązuj zadania na tablicy",
       href: "/dashboard/tablica",
-      comingSoon: true,
+      comingSoon: false,
     },
   ];
 
