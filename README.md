@@ -60,3 +60,22 @@ Platforma korepetycji matematycznych dla uczniów klas 6–8 podstawówki oraz m
 | `npm run db:seed` | Seed (admin@mathly.pl / Admin123!) |
 | `npm run db:studio` | Prisma Studio (GUI bazy) |
 
+## Uruchomienie lokalne (szybki start)
+
+```bash
+# 1. Zainstaluj zależności
+npm install
+
+# 2. Skopiuj i uzupełnij .env (DATABASE_URL, AUTH_SECRET, AUTH_URL)
+cp .env.example .env
+
+# 3. Zaktualizuj schemat bazy i utwórz dane testowe
+npm run db:push
+npm run db:seed
+
+# 4. Uruchom serwer deweloperski
+npm run dev
+```
+
+Otwórz http://localhost:3000. Zaloguj się jako admin@mathly.pl / Admin123! lub zarejestruj nowe konto.
+
