@@ -16,7 +16,7 @@ export default async function DashboardPage() {
       title: "Zadania",
       description: "Ćwicz z zadaniami z rozwiązaniami krok po kroku",
       href: "/dashboard/zadania",
-      comingSoon: true,
+      comingSoon: false,
     },
     {
       title: "Umów lekcję",
